@@ -33,14 +33,6 @@ public class DriveBase extends SubsystemBase {
 
   }
 
-  public double DistanceL() {
-    return leftMaster.getSensorCollection().getQuadraturePosition() / 4096.0;
-  }
-
-  public double DistanceR() {
-    return rightMaster.getSensorCollection().getQuadraturePosition() / 4096.0;
-  }
-
   @Override
   public void periodic() {
     drive(RobotContainer.taycam.getRawAxis(L)*(-1), RobotContainer.taycam.getRawAxis(R)*(-1));

@@ -35,7 +35,7 @@ import frc.robot.subsystems.Gyro;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  public static final Joystick taycam = new Joystick(Y);
+  public static final Joystick taycam = new Joystick(0);
   private final DriveBase drivebase = new DriveBase();
   private final Grabber m_grabber = new Grabber();
   private final TurnController m_tcontroller = new TurnController();
