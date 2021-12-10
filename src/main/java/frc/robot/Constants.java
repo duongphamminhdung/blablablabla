@@ -21,8 +21,7 @@ public final class Constants {
       public static final int SUCKER_ID = 5;
       public static final int OPENER_ID = 6;
       public static final int GRABBER_ID = 10;
-      public static final int INTAKE1_ID = 12;
-      public static final int INTAKE2_ID = 13;
+      public static final int INTAKE_ID = 12;
    }
    public static final class JOYSTICK{
       public static final int X = 3;
@@ -34,6 +33,9 @@ public final class Constants {
       public static final int A = 13;
       public static final int D = 14;
       public static final int S = 15;
+      public static final int HU = 16;
+      public static final int HD = 17;
+
    }
    public static final class PID {
       public static final double kP = 0;
@@ -48,8 +50,12 @@ public final class Constants {
       public static final double GRAB_SPEED = 1;
       public static final double INTAKE_SPEED = 1;
       public static final double DRIVE_SPEED = 1;
-    }  
-    public static final double GRAB_TIME = SPEED.GRAB_SPEED*((5.330)/60/2/2);
+    }
+    private static final double omega = 5.330/60;
+    private static final double radius = 15.24/2;
+    public static final double GRAB_TIME = (omega/4)/SPEED.GRAB_SPEED;
+    public static final double TRONGMINH = (omega/4)/SPEED.INTAKE_SPEED;
+    //public static final double DS1 = ((omega*omega/radius))/SPEED.DRIVE_SPEED;
    }
     
 

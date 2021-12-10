@@ -6,20 +6,25 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import static frc.robot.Constants.SPEED.*;
+
 import static frc.robot.Constants.SUBSYSTEM.*;
+import static frc.robot.Constants.SPEED.*;
 
 public class Intake extends SubsystemBase {
-  /** Creates a new Intake. */
-  public WPI_TalonSRX Intake1 = new WPI_TalonSRX(INTAKE1_ID);
-  public WPI_TalonSRX Intake2 = new WPI_TalonSRX(INTAKE2_ID);
+  /** Creates a new Grabber. */
+  public WPI_TalonSRX Intake = new WPI_TalonSRX(INTAKE_ID);
+
   public Intake() {
-    Intake2.setInverted(true);
+    
   }
 
-  public void Suck(double v){
-    Intake1.set(v);
-    Intake2.set(v);
+  public void handUp(){
+    double speedu = INTAKE_SPEED;
+    Intake.set(speedu);
+  }
+
+  public void handDown(){
+    Intake.set(INTAKE_SPEED*(-1));
   }
 
   @Override

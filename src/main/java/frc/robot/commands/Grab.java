@@ -6,24 +6,21 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Grabber;
-import static frc.robot.Constants.SPEED.*;
 
 public class Grab extends CommandBase {
   /** Creates a new Grab. */
   private Grabber grabber;
-  private double v;
   
-  public Grab(Grabber m_grabber, double speeduu) {
+  public Grab(Grabber m_grabber) {
     // Use addRequirements() here to declare subsystem dependencies.
     grabber = m_grabber;
-    v = GRAB_SPEED;
     addRequirements(grabber);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    grabber.grab(v);
+    grabber.grab();
   }
 
   // Called every time the scheduler runs while the command is scheduled.

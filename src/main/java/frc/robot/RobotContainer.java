@@ -17,9 +17,10 @@ import static frc.robot.Constants.*;
 import frc.robot.commands.Auto;
 import frc.robot.commands.Grab;
 import frc.robot.commands.DriveStraight;
-import frc.robot.commands.Suck;
 import frc.robot.commands.RotateToAngle;
 import frc.robot.commands.Rotate;
+import frc.robot.commands.HandUp;
+import frc.robot.commands.HandDown;
 
 import frc.robot.subsystems.DriveBase;
 import frc.robot.subsystems.Grabber;
@@ -37,20 +38,20 @@ public class RobotContainer {
   public static final Joystick taycam = new Joystick(Y);
   private final DriveBase drivebase = new DriveBase();
   private final Grabber m_grabber = new Grabber();
-  private final Intake m_intake = new Intake();
   private final TurnController m_tcontroller = new TurnController();
   private final Gyro m_gyro = new Gyro();
+  private final Intake m_intake = new Intake();
 
   private final Command drivestraight = new DriveStraight(drivebase, DRIVE_SPEED);
   private final Command drivesbackward = new DriveStraight(drivebase, (-1)*DRIVE_SPEED);
 
-  private final Command m_Auto = new Auto(m_grabber);
-  private final Command grab = new Grab(m_grabber, GRAB_SPEED);
-  private final Command suck = new Suck(m_intake);
+  private final Command m_Auto = new Auto(drivebase);
+  private final Command grab = new Grab(m_grabber);
   private final Command rotate = new RotateToAngle(drivebase ,m_gyro.getYaw());
   private final Command rotateRight = new Rotate(drivebase, DRIVE_SPEED);
   private final Command rotateLeft = new Rotate(drivebase, DRIVE_SPEED*(-1));
-
+  private final Command handUp = new HandUp(m_intake);
+  private final Command handDown = new HandDown(m_intake);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -70,7 +71,8 @@ public class RobotContainer {
     new JoystickButton(taycam, S).whenActive(drivesbackward);
     new JoystickButton(taycam, A).whenActive(rotateLeft);
     new JoystickButton(taycam, D).whenActive(rotateRight);
-
+    new JoystickButton(taycam, HU).whenActive(handUp.withTimeout(TRONGMINH));
+    new JoystickButton(taycam, HD).whenActive(handDown.withTimeout(TRONGMINH));
   }
 
   /**

@@ -15,9 +15,9 @@ public class Grabber extends SubsystemBase {
   public WPI_TalonSRX Grabber = new WPI_TalonSRX(GRABBER_ID);
 
   public Grabber() {}
-  public void grab(double speedu){
-    speedu = GRAB_SPEED;
-    Grabber.set(speedu);
+  
+  public void grab(){
+    Grabber.set(GRAB_SPEED);
   }
 
   @Override

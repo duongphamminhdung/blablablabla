@@ -22,9 +22,9 @@ import static frc.robot.Constants.*;
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
 public class Auto extends ParallelCommandGroup {
   /** Creates a new Auto. */
-  public Auto(Grabber grabInAuto) {
+  public Auto(DriveBase drivebase) {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
-    addCommands(new Grab(grabInAuto, GRAB_SPEED).withTimeout(GRAB_TIME));
+    //addCommands(new DriveStraight(drivebase, DRIVE_SPEED).withTimeout(DS1));
   }
 }
