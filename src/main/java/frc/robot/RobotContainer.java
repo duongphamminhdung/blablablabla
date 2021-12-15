@@ -67,10 +67,6 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     new JoystickButton(taycam, G).whenActive(grab.withTimeout(GRAB_TIME)); 
-    new JoystickButton(taycam, W).whenActive(drivestraight);
-    new JoystickButton(taycam, S).whenActive(drivesbackward);
-    new JoystickButton(taycam, A).whenActive(rotateLeft);
-    new JoystickButton(taycam, D).whenActive(rotateRight);
     new JoystickButton(taycam, HU).whenActive(handUp.withTimeout(TRONGMINH));
     new JoystickButton(taycam, HD).whenActive(handDown.withTimeout(TRONGMINH));
   }
