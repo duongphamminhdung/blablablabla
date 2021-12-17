@@ -14,10 +14,10 @@ package frc.robot;
  */
 public final class Constants {
    public static final class SUBSYSTEM{
-      public static final int RIGHTMOTOR1_ID = 2;
-      public static final int RIGHTMOTOR2_ID = 3;
-      public static final int LEFTMOTOR1_ID = 1;
-      public static final int LEFTMOTOR2_ID = 3;
+      public static final int RIGHTMOTOR1_ID = 1;
+      public static final int RIGHTMOTOR2_ID = 2;
+      public static final int LEFTMOTOR1_ID = 3;
+      public static final int LEFTMOTOR2_ID = 4;
       public static final int SUCKER_ID = 5;
       public static final int OPENER_ID = 6;
       public static final int GRABBER_ID = 10;
