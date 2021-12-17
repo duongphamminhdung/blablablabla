@@ -26,5 +26,6 @@ public class Auto extends ParallelCommandGroup {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
     //addCommands(new DriveStraight(drivebase, DRIVE_SPEED).withTimeout(DS1));
+    addCommands(new DriveStraight(drivebase, 0.4).withTimeout(5));
   }
 }
