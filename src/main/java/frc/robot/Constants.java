@@ -49,7 +49,6 @@ public final class Constants {
       public static final double DRIVE_SPEED = 1;
     }
     private static final double omega = 5.330/60;
-    private static final double radius = 15.24/2;
     public static final double GRAB_TIME = (omega/4)/SPEED.GRAB_SPEED;
     public static final double TRONGMINH = (omega/4)/SPEED.INTAKE_SPEED;
     //public static final double DS1 = ((omega*omega/radius))/SPEED.DRIVE_SPEED;

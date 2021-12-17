@@ -11,22 +11,16 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import static frc.robot.Constants.JOYSTICK.*;
-import static frc.robot.Constants.SPEED.*;
 import static frc.robot.Constants.*;
 
 import frc.robot.commands.Auto;
 import frc.robot.commands.Grab;
-import frc.robot.commands.DriveStraight;
-import frc.robot.commands.RotateToAngle;
-import frc.robot.commands.Rotate;
 import frc.robot.commands.HandUp;
 import frc.robot.commands.HandDown;
 
 import frc.robot.subsystems.DriveBase;
 import frc.robot.subsystems.Grabber;
 import frc.robot.subsystems.Intake;
-import frc.robot.subsystems.TurnController;
-import frc.robot.subsystems.Gyro;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -38,15 +32,10 @@ public class RobotContainer {
   public static final Joystick taycam = new Joystick(0);
   private final DriveBase drivebase = new DriveBase();
   private final Grabber m_grabber = new Grabber();
-  private final TurnController m_tcontroller = new TurnController();
-  private final Gyro m_gyro = new Gyro();
   private final Intake m_intake = new Intake();
 
   private final Command m_Auto = new Auto(drivebase);
   private final Command grab = new Grab(m_grabber);
-  private final Command rotate = new RotateToAngle(drivebase ,m_gyro.getYaw());
-  private final Command rotateRight = new Rotate(drivebase, DRIVE_SPEED);
-  private final Command rotateLeft = new Rotate(drivebase, DRIVE_SPEED*(-1));
   private final Command handUp = new HandUp(m_intake);
   private final Command handDown = new HandDown(m_intake);
 
