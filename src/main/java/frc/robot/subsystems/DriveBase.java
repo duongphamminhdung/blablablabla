@@ -35,7 +35,15 @@ public class DriveBase extends SubsystemBase {
 
   @Override
   public void periodic() {
-    drive(RobotContainer.taycam.getRawAxis(L)*(-1), RobotContainer.taycam.getRawAxis(R)*(-1));
-  }
+    if (RobotContainer.taycam.getRawAxis(LT) > 0.5 && RobotContainer.taycam.getRawAxis(RT) > 0.5) {
+      drive(RobotContainer.taycam.getRawAxis(L) * 0.8, RobotContainer.taycam.getRawAxis(R) * 0.8);
 
+    } else if (RobotContainer.taycam.getRawAxis(RT) > 0.5) {
+      drive(RobotContainer.taycam.getRawAxis(L) * 0.4, RobotContainer.taycam.getRawAxis(R) * 0.8);
+    } else if (RobotContainer.taycam.getRawAxis(LT) > 0.5) {
+      drive(RobotContainer.taycam.getRawAxis(L) * 0.8, RobotContainer.taycam.getRawAxis(5) * 0.4);
+    } else {;
+      drive(RobotContainer.taycam.getRawAxis(1) * 0.4, RobotContainer.taycam.getRawAxis(5) * 0.4);
+    }
+  }
 }
