@@ -29,10 +29,6 @@ public final class Constants {
       public static final int L1 = 1;
       public static final int L2 = 0;
       public static final int G = 11;
-      public static final int W = 12;
-      public static final int A = 13;
-      public static final int D = 14;
-      public static final int S = 15;
       public static final int HU = 16;
       public static final int HD = 17;
 

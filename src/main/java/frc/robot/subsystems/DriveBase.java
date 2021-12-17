@@ -24,11 +24,7 @@ public class DriveBase extends SubsystemBase {
     rightFollow.follow(rightMaster);
     leftFollow.follow(leftMaster);
     leftMaster.setInverted(true);
-    leftFollow.setNeutralMode(NeutralMode.Brake);
-    leftMaster.setNeutralMode(NeutralMode.Brake);
-    rightFollow.setNeutralMode(NeutralMode.Brake);
-    rightMaster.setNeutralMode(NeutralMode.Brake);
-    
+
    }
   public void drive(double leftdrive, double rightdrive){
         leftMaster.set(leftdrive);
