@@ -57,15 +57,7 @@ public class DriveBase extends SubsystemBase {
     } else {
       drive(RobotContainer.taycam.getRawAxis(1) * 1, RobotContainer.taycam.getRawAxis(5) * 1);
     }
-    if (Math.abs(RobotContainer.taycam.getRawAxis(1)) > 0.5
-        && Math.abs(RobotContainer.taycam.getRawAxis(5)) > 0.5) {
-      x = Timer.getFPGATimestamp();
-      z = x - y;
-      if (z > 6) {
-      }
-    } else {
-      y = Timer.getFPGATimestamp();
-    }
+    
   }
 
 }

@@ -42,9 +42,6 @@ public class RobotContainer {
   private final Gyro m_gyro = new Gyro();
   private final Intake m_intake = new Intake();
 
-  private final Command drivestraight = new DriveStraight(drivebase, DRIVE_SPEED);
-  private final Command drivesbackward = new DriveStraight(drivebase, (-1)*DRIVE_SPEED);
-
   private final Command m_Auto = new Auto(drivebase);
   private final Command grab = new Grab(m_grabber);
   private final Command rotate = new RotateToAngle(drivebase ,m_gyro.getYaw());
