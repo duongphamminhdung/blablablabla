@@ -14,24 +14,25 @@ package frc.robot;
  */
 public final class Constants {
    public static final class SUBSYSTEM{
-      public static final int RIGHTMOTOR1_ID = 11;
-      public static final int RIGHTMOTOR2_ID = 7;
-      public static final int LEFTMOTOR1_ID = 8;
-      public static final int LEFTMOTOR2_ID = 4;
+      public static final int RIGHTMOTOR1_ID = 2;
+      public static final int RIGHTMOTOR2_ID = 3;
+      public static final int LEFTMOTOR1_ID = 1;
+      public static final int LEFTMOTOR2_ID = 3;
       public static final int SUCKER_ID = 5;
       public static final int OPENER_ID = 6;
       public static final int GRABBER_ID = 10;
       public static final int INTAKE_ID = 12;
    }
    public static final class JOYSTICK{
+      public static final int Y = 4;
+      public static final int A = 1;
       public static final int X = 3;
-      public static final int Y = 2;
-      public static final int L1 = 1;
-      public static final int L2 = 0;
-      public static final int G = 11;
-      public static final int HU = 16;
-      public static final int HD = 17;
+      public static final int B = 2;
 
+      public static final int L = 1;
+      public static final int R = 5;
+      public static final int LT = 2;
+      public static final int RT = 3;
    }
    public static final class PID {
       public static final double kP = 0;

@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import static frc.robot.Constants.SUBSYSTEM.*;
+import static frc.robot.Constants.JOYSTICK.*;
 
 public class DriveBase extends SubsystemBase {
   /** Creates a new DriveBase. */
@@ -31,9 +32,6 @@ public class DriveBase extends SubsystemBase {
         rightMaster.set(rightdrive);
 
   }
-  private double x;
-  private double y;
-  private double z;
 
   public double DistanceL() {
     return leftMaster.getSensorCollection().getQuadraturePosition() / 4096.0;
@@ -45,17 +43,15 @@ public class DriveBase extends SubsystemBase {
 
   @Override
   public void periodic() {
-    if (RobotContainer.taycam.getRawAxis(2) > 0.5 && RobotContainer.taycam.getRawAxis(3) > 0.5) {
-      drive(RobotContainer.taycam.getRawAxis(1) * 0.8, RobotContainer.taycam.getRawAxis(5) * 0.8);
+    if (RobotContainer.taycam.getRawAxis(RT) > 0.5 && RobotContainer.taycam.getRawAxis(LT) > 0.5) {
+      drive(RobotContainer.taycam.getRawAxis(L) * 0.8, RobotContainer.taycam.getRawAxis(L) * 0.8);
 
-    } else if (RobotContainer.taycam.getRawAxis(2) > 0.5) {
-      drive(RobotContainer.taycam.getRawAxis(1) * 0.2, RobotContainer.taycam.getRawAxis(5) * 01);
-    } else if (RobotContainer.taycam.getRawAxis(3) > 0.5) {
-      drive(RobotContainer.taycam.getRawAxis(1) * 1, RobotContainer.taycam.getRawAxis(5) * 0.2
-
-      );
+    } else if (RobotContainer.taycam.getRawAxis(LT) > 0.5) {
+      drive(RobotContainer.taycam.getRawAxis(L) * 1, RobotContainer.taycam.getRawAxis(R) * 0.4);
+    } else if (RobotContainer.taycam.getRawAxis(RT) > 0.5) {
+      drive(RobotContainer.taycam.getRawAxis(R) * 1, RobotContainer.taycam.getRawAxis(L) * 0.5);
     } else {
-      drive(RobotContainer.taycam.getRawAxis(1) * 1, RobotContainer.taycam.getRawAxis(5) * 1);
+      drive(RobotContainer.taycam.getRawAxis(L) * 0.5, RobotContainer.taycam.getRawAxis(R) * 0.5);
     }
     
   }

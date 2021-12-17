@@ -63,9 +63,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    new JoystickButton(taycam, G).whenActive(grab.withTimeout(GRAB_TIME)); 
-    new JoystickButton(taycam, HU).whenActive(handUp.withTimeout(TRONGMINH));
-    new JoystickButton(taycam, HD).whenActive(handDown.withTimeout(TRONGMINH));
+    new JoystickButton(taycam, X).whenActive(grab.withTimeout(GRAB_TIME)); 
+    new JoystickButton(taycam, Y).whenActive(handUp);
+    new JoystickButton(taycam, A).whenActive(handDown);
   }
 
   /**
