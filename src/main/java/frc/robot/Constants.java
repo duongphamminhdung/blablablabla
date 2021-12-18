@@ -44,8 +44,8 @@ public final class Constants {
       
    }
     public static final class SPEED {
-      public static final double GRAB_SPEED = 1;
-      public static final double INTAKE_SPEED = 1;
+      public static final double GRAB_SPEED = 0.2;
+      public static final double INTAKE_SPEED = 0.2;
       public static final double DRIVE_SPEED = 1;
     }
     private static final double omega = 5.330/60;

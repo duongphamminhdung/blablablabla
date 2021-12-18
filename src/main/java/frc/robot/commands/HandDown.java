@@ -12,7 +12,7 @@ public class HandDown extends CommandBase {
   private Intake intake;
   
   public HandDown(Intake m_intake) {
-    // Use addRequirements() here to declare subsystem dependencies.
+   // Use addRequirements() here to declare subsystem dependencies.
     intake = m_intake;
     addRequirements(m_intake);
   }
@@ -20,7 +20,7 @@ public class HandDown extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    intake.handDown();
+    intake.handUp(-0.2);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -29,7 +29,9 @@ public class HandDown extends CommandBase {
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    intake.handUp(0);
+  }
 
   // Returns true when the command should end.
   @Override
@@ -37,3 +39,4 @@ public class HandDown extends CommandBase {
     return false;
   }
 }
+  

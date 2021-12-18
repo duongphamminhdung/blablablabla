@@ -7,6 +7,13 @@
     "language": "java"
   },
   {
+    "artifact": "frcJava (in project blablablabla-main)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "blablablabla-main",
+    "language": "java"
+  },
+  {
     "artifact": "frcJava (in project blablabla)",
     "target": "roborio",
     "debugfile": "frcJava_roborio.debugconfig",

@@ -18,13 +18,8 @@ public class Intake extends SubsystemBase {
     
   }
 
-  public void handUp(){
-    double speedu = INTAKE_SPEED;
-    Intake.set(speedu);
-  }
-
-  public void handDown(){
-    Intake.set(INTAKE_SPEED*(-1));
+  public void handUp(double x){
+    Intake.set(x);
   }
 
   @Override

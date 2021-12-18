@@ -16,8 +16,8 @@ public class Grabber extends SubsystemBase {
 
   public Grabber() {}
   
-  public void grab(){
-    Grabber.set(GRAB_SPEED);
+  public void grab(double x){
+    Grabber.set(x);
   }
 
   @Override
