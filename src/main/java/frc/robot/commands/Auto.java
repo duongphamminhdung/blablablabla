@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 
 // Subsystems
 import frc.robot.subsystems.*;
+import frc.robot.Constants.SPEED;
 
 
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
@@ -20,6 +21,6 @@ public class Auto extends ParallelCommandGroup {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
     //addCommands(new DriveStraight(drivebase, DRIVE_SPEED).withTimeout(DS1));
-    addCommands(new DriveStraight(drivebase, 0.2));
+    addCommands(new DriveStraight(drivebase, SPEED.DRIVE_SPEED_AUTO).withTimeout(1));
   }
 }
