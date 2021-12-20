@@ -11,14 +11,12 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import static frc.robot.Constants.JOYSTICK.*;
-import static frc.robot.Constants.*;
 
 import frc.robot.commands.Auto;
 import frc.robot.commands.Grab;
 import frc.robot.commands.UnGrab;
 import frc.robot.commands.HandUp;
 import frc.robot.commands.HandDown;
-
 import frc.robot.subsystems.DriveBase;
 import frc.robot.subsystems.Grabber;
 import frc.robot.subsystems.Intake;
@@ -56,8 +54,8 @@ public class RobotContainer {
   private void configureButtonBindings() {
     new JoystickButton(taycam, X).whileActiveOnce(grab); 
     new JoystickButton(taycam, B).whileActiveOnce(UnGrab);
-    new JoystickButton(taycam, Y).whileActiveOnce(handUp);
-    new JoystickButton(taycam, A).whileActiveOnce(handDown);
+    new JoystickButton(taycam, A).whileActiveOnce(handUp);
+    new JoystickButton(taycam, Y).whileActiveOnce(handDown);
   }
 
   /**
