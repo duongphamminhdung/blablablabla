@@ -13,10 +13,12 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import static frc.robot.Constants.JOYSTICK.*;
 
 import frc.robot.commands.Auto;
+import frc.robot.commands.Autonomous;
 import frc.robot.commands.Grab;
 import frc.robot.commands.UnGrab;
 import frc.robot.commands.HandUp;
 import frc.robot.commands.HandDown;
+
 import frc.robot.subsystems.DriveBase;
 import frc.robot.subsystems.Grabber;
 import frc.robot.subsystems.Intake;
@@ -34,6 +36,7 @@ public class RobotContainer {
   private final Intake m_intake = new Intake();
 
   private final Command m_Auto = new Auto(drivebase);
+  private final Command m_Autonomous = new Autonomous(drivebase); // Test lenh autonomous
   private final Command grab = new Grab(m_grabber);
   private final Command UnGrab = new UnGrab(m_grabber);
   private final Command handUp = new HandUp(m_intake);
@@ -54,8 +57,8 @@ public class RobotContainer {
   private void configureButtonBindings() {
     new JoystickButton(taycam, X).whileActiveOnce(grab); 
     new JoystickButton(taycam, B).whileActiveOnce(UnGrab);
-    new JoystickButton(taycam, A).whileActiveOnce(handUp);
-    new JoystickButton(taycam, Y).whileActiveOnce(handDown);
+    new JoystickButton(taycam, Y).whileActiveOnce(handUp);
+    new JoystickButton(taycam, A).whileActiveOnce(handDown);
   }
 
   /**
@@ -65,6 +68,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return m_Auto;
+    return m_Autonomous;
   }
 }
