@@ -7,6 +7,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 
 import frc.robot.commands.Drive;
+import frc.robot.commands.RotateToAngle;
 import frc.robot.subsystems.*;
 
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
@@ -18,7 +19,7 @@ public class Autonomous extends SequentialCommandGroup {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
     super(  new Drive(drivebase, 0.4, 0.4).withTimeout(5), // Drive Straight
-            new Drive(drivebase, -0.2, 0.2).withTimeout(1.25), // Turn around (90º)
+            new RotateToAngle(drivebase, 90), // Turn around (90º)
             new Drive(drivebase, 0.4, 0.4).withTimeout(3) // Drive Straight into middle area
     );
   }

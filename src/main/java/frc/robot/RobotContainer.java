@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import static frc.robot.Constants.JOYSTICK.*;
 
-import frc.robot.commands.Auto;
 import frc.robot.commands.Autonomous;
 import frc.robot.commands.Grab;
 import frc.robot.commands.UnGrab;
@@ -35,7 +34,6 @@ public class RobotContainer {
   private final Grabber m_grabber = new Grabber();
   private final Intake m_intake = new Intake();
 
-  private final Command m_Auto = new Auto(drivebase);
   private final Command m_Autonomous = new Autonomous(drivebase); // Test lenh autonomous
   private final Command grab = new Grab(m_grabber);
   private final Command UnGrab = new UnGrab(m_grabber);
