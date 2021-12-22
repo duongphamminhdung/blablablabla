@@ -5,7 +5,9 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.Grabber;
+import frc.robot.Constants.JOYSTICK.*;
 
 public class UnGrab extends CommandBase {
   /** Creates a new UnGrab. */
@@ -19,18 +21,23 @@ public class UnGrab extends CommandBase {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {
-    grabber.grab(-0.2);
+  public void initialize(){
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    if(RobotContainer.taycam.getRawAxis(2) > 0.5){
+      grabber.grab(-0.8);
+    } else {
+      grabber.grab(-0.4);
+    }
+  }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    grabber.grab(0);
+    grabber.grab(-0.15);
   }
 
   // Returns true when the command should end.

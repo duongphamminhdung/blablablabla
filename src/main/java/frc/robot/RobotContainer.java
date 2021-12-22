@@ -31,11 +31,11 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public static final Joystick taycam = new Joystick(0);
   private final DriveBase drivebase = new DriveBase();
-  private final Grabber m_grabber = new Grabber();
+  public final Grabber m_grabber = new Grabber();
   private final Intake m_intake = new Intake();
 
   private final Command m_Autonomous = new Autonomous(drivebase); // Test lenh autonomous
-  private final Command grab = new Grab(m_grabber);
+  public final Command grab = new Grab(m_grabber);
   private final Command UnGrab = new UnGrab(m_grabber);
   private final Command handUp = new HandUp(m_intake);
   private final Command handDown = new HandDown(m_intake);
@@ -57,6 +57,7 @@ public class RobotContainer {
     new JoystickButton(taycam, B).whileActiveOnce(UnGrab);
     new JoystickButton(taycam, Y).whileActiveOnce(handUp);
     new JoystickButton(taycam, A).whileActiveOnce(handDown);
+    
   }
 
   /**

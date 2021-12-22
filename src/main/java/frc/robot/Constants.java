@@ -35,8 +35,8 @@ public final class Constants {
       public static final int RT = 3;
    }
    public static final class PID {
-      public static final double kP = 0;
-      public static final double kI = 0;
+      public static final double kP = 1;
+      public static final double kI = 0.05;
       public static final double kD = 0;
 
       public static final double kToleranceDegrees = 2.0;
