@@ -20,7 +20,7 @@ public class HandUp extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    intake.handUp(0.5);
+    intake.handUp(-0.25);
   }
 
   // Called every time the scheduler runs while the command is scheduled.

@@ -20,12 +20,13 @@ public class HandDown extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    intake.handUp(-0.4);
+    intake.handUp(0.25);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+  }
 
   // Called once the command ends or is interrupted.
   @Override
