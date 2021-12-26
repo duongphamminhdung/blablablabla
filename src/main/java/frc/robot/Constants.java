@@ -21,6 +21,7 @@ public final class Constants {
       public static final int SUCKER_ID = 5;
       public static final int OPENER_ID = 6;
       public static final int GRABBER_ID = 10;
+      public static final int STRINGER_ID = 11;
       public static final int INTAKE_ID = 12;
    }
    public static final class JOYSTICK{
@@ -33,6 +34,8 @@ public final class Constants {
       public static final int R = 5;
       public static final int LT = 2;
       public static final int RT = 3;
+      public static final int LB = 5;
+      public static final int RB = 6;
    }
    public static final class PID {
       public static final double kP = 1;

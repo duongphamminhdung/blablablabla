@@ -15,6 +15,7 @@ import static frc.robot.Constants.JOYSTICK.*;
 import frc.robot.commands.Autonomous;
 import frc.robot.commands.Grab;
 import frc.robot.commands.UnGrab;
+import frc.robot.commands.HoldGrab;
 import frc.robot.commands.HandUp;
 import frc.robot.commands.HandDown;
 
@@ -37,6 +38,7 @@ public class RobotContainer {
   private final Command m_Autonomous = new Autonomous(drivebase); // Test lenh autonomous
   public final Command grab = new Grab(m_grabber);
   private final Command UnGrab = new UnGrab(m_grabber);
+  private final Command HoldGrab = new HoldGrab(m_grabber);
   private final Command handUp = new HandUp(m_intake);
   private final Command handDown = new HandDown(m_intake);
 
@@ -53,10 +55,11 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    new JoystickButton(taycam, X).whileActiveOnce(grab); 
-    new JoystickButton(taycam, B).whileActiveOnce(UnGrab);
     new JoystickButton(taycam, Y).whileActiveOnce(handUp);
     new JoystickButton(taycam, A).whileActiveOnce(handDown);
+    new JoystickButton(taycam, X).whileActiveOnce(grab); 
+    new JoystickButton(taycam, B).whileActiveOnce(UnGrab);
+    new JoystickButton(taycam, RB).whileActiveOnce(HoldGrab);
     
   }
 
