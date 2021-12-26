@@ -18,10 +18,14 @@ import frc.robot.commands.UnGrab;
 import frc.robot.commands.HoldGrab;
 import frc.robot.commands.HandUp;
 import frc.robot.commands.HandDown;
+import frc.robot.commands.StringUp;
+import frc.robot.commands.StringDown;
 
 import frc.robot.subsystems.DriveBase;
 import frc.robot.subsystems.Grabber;
 import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Stringer;
+
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -32,8 +36,10 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public static final Joystick taycam = new Joystick(0);
   private final DriveBase drivebase = new DriveBase();
-  public final Grabber m_grabber = new Grabber();
+  private final Grabber m_grabber = new Grabber();
   private final Intake m_intake = new Intake();
+  public final Stringer m_stringer = new Stringer();
+
 
   private final Command m_Autonomous = new Autonomous(drivebase); // Test lenh autonomous
   public final Command grab = new Grab(m_grabber);
@@ -41,6 +47,8 @@ public class RobotContainer {
   private final Command HoldGrab = new HoldGrab(m_grabber);
   private final Command handUp = new HandUp(m_intake);
   private final Command handDown = new HandDown(m_intake);
+  private final Command stringUp = new StringUp(m_stringer);
+  private final Command stringDown = new StringDown(m_stringer);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -57,9 +65,13 @@ public class RobotContainer {
   private void configureButtonBindings() {
     new JoystickButton(taycam, Y).whileActiveOnce(handUp);
     new JoystickButton(taycam, A).whileActiveOnce(handDown);
+
     new JoystickButton(taycam, X).whileActiveOnce(grab); 
     new JoystickButton(taycam, B).whileActiveOnce(UnGrab);
     new JoystickButton(taycam, RB).whileActiveOnce(HoldGrab);
+
+    new JoystickButton(taycam, START).whileActiveOnce(stringUp);
+    new JoystickButton(taycam, BACK).whileActiveOnce(stringDown);
     
   }
 
