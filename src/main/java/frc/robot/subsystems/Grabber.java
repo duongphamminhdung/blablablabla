@@ -7,6 +7,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import frc.robot.RobotContainer;
 import static frc.robot.Constants.SUBSYSTEM.*;
 import static frc.robot.Constants.SPEED.*;
 
@@ -23,5 +24,14 @@ public class Grabber extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    int Direction = RobotContainer.taycam.getPOV();
+
+    if (Direction == 0) {
+      grab(-GRAB_SPEED);
+    } else if (Direction == 180) {
+      grab(GRAB_SPEED);
+    } else {
+      grab(0);
+    }
   }
 }

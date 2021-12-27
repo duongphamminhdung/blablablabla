@@ -50,10 +50,11 @@ public final class Constants {
       
    }
     public static final class SPEED {
-      public static final double GRAB_SPEED = 0.2;
+      public static final double GRAB_SPEED = 0.3;
       public static final double INTAKE_SPEED = 0.2;
       public static final double DRIVE_SPEED = 0.4;
       public static final double DRIVE_SPEED_AUTO = 0.2;
+      public static final double STRING_SPEED = 0.3;
     }
     private static final double omega = 5.330/60;
     public static final double GRAB_TIME = (omega/4)/SPEED.GRAB_SPEED;

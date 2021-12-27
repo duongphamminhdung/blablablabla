@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import static frc.robot.Constants.SUBSYSTEM.*;
+import static frc.robot.Constants.SPEED.*;
+import frc.robot.RobotContainer;
 
 public class Stringer extends SubsystemBase {
   /** Creates a new Stringer. */
@@ -22,5 +24,14 @@ public class Stringer extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    int direction = RobotContainer.taycam.getPOV();
+
+    if(direction == 90){
+      string(STRING_SPEED);
+    } else if(direction == 270){
+      string(-STRING_SPEED);
+    } else {
+      string(0);
+    }
   }
 }
