@@ -41,12 +41,12 @@ public final class Constants {
       public static final int BACK = 8;
    }
    public static final class PID {
-      public static final double kP = 1;
-      public static final double kI = 0.05;
-      public static final double kD = 0;
+      public static final double kP = 0.01;
+      public static final double kI = 0.008;
+      public static final double kD = 0.005;
 
       public static final double kToleranceDegrees = 2.0;
-      public static final double kToleranceAngularVelocity = 0.08;
+      public static final double kToleranceAngularVelocity = 0.075;
       
    }
     public static final class SPEED {

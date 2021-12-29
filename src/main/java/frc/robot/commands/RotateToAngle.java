@@ -26,6 +26,7 @@ public class RotateToAngle extends CommandBase {
     turnController.setSetpoint(angle);
     turnController.enableContinuousInput(-180, 180);
     turnController.setTolerance(kToleranceDegrees, kToleranceAngularVelocity);
+    turnController.setIntegratorRange(-10, 1);
 
     addRequirements(m_drivebase);
     addRequirements(m_gyro);
@@ -43,9 +44,10 @@ public class RotateToAngle extends CommandBase {
   public void execute() {
     SmartDashboard.putBoolean("start", true);
     SmartDashboard.putNumber("angle", m_gyro.getYaw());
+
     double speed = turnController.calculate(m_gyro.getYaw());
     speed += Math.signum(speed) * 0.1;
-    speed = Math.min(0.6, Math.max(-0.6, speed));
+    speed = Math.min(0.5, Math.max(-0.5, speed));
     m_drivebase.drive(-speed, speed);
   }
 

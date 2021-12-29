@@ -18,9 +18,11 @@ public class Autonomous extends SequentialCommandGroup {
   public Autonomous(DriveBase drivebase) {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
-    super(  new Drive(drivebase, 0.4, 0.4).withTimeout(5), // Drive Straight
-            new RotateToAngle(drivebase, 90), // Turn around (90º)
-            new Drive(drivebase, 0.4, 0.4).withTimeout(3) // Drive Straight into middle area
-    );
+  super(  
+          new Drive(drivebase, -0.4, -0.37).withTimeout(4), // Drive Straight
+          new RotateToAngle(drivebase, 37), // Turn around (40º)
+          new Drive(drivebase, -0.6, -0.6).withTimeout(6)// Drive Straight into middle area 
+  );
   }
 }
+g
